@@ -37,17 +37,18 @@ git clone https://github.com/devpola/pmodhygro.git
 
 ## Usage
 ````python
-from pmodhygro import HygroI2C
+from pmodhygro import PmodHygro
 
 # Create i2c bus
-pmod = HygroI2C()
-pmod.begin_i2c()
+sensor = PmodHygro()
+sensor.begin_i2c()
 
 # Read data from Pmod HYGRO 
-temp = pmod.get_temperature()
-temp_f = pmod.get_temperature_f()
-hum = pmod.get_humidity()
+temp = sensor.get_temperature()
+temp_f = sensor.get_temperature_f()
+hum = sensor.get_humidity()
 ````
+You have to run program with 'sudo' command for avoiding permission error
 
 
 ## Check list before using library
@@ -80,14 +81,8 @@ Ubuntu(20.04):
 
 * Check device address is 0x40
   1. Install **i2c-tools** package for checking connected devices to i2c interface
-  
-      Python 2:
       ````sh
-      sudo pip install pmodhygro
-      ````
-      Python 3:
-      ````sh
-      sudo pip3 install pmodhygro
+      sudo apt-get install i2c-tools
       ````
   
   

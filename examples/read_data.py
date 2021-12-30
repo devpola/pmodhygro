@@ -1,13 +1,13 @@
-from pmodhygro import HygroI2C
+from pmodhygro import PmodHygro
 
 # Create i2c bus
-pmod = HygroI2C()
-pmod.begin_i2c()
+sensor = PmodHygro()
+sensor.begin_i2c()
 
 # Read data from Pmod HYGRO 
-temp = pmod.get_temperature()
-temp_f = pmod.get_temperature_f()
-hum = pmod.get_humidity()
+temp = sensor.get_temperature()
+temp_f = sensor.get_temperature_f()
+hum = sensor.get_humidity()
 
 # Print data
 print("temp : ", temp)
